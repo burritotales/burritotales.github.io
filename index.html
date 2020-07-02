@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>MuttsnMittens</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+        <link rel = "stylesheet" type = "text/css" href = "CSS/muttsstyle.css" />
+     </head>
+
+ <body>
+    <div class="pagecontainer">
+        <!--
+        <nav> 
+            <img id="logo" src="data:image/png;base64,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"
+            alt="MuttsnMittens logo"/>
+            <a href="mutts.html" class="activepage"> About </a>
+            <a href="dogboarding.html"> Dog Boarding </a>
+            <a href="boarding.html"> Cat Boarding </a>
+            <a href=""> Meet our dogs! </a>
+            <a href=""> Volunteering </a>
+            <a href="contact-us.html"> Contact us </a>    
+        </nav>
+    -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <img id="logo" src="data:image/png;base64,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"
+            alt="MuttsnMittens logo"/>
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link activepage" href="index.html"> About </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dogboarding.html">Dog Boarding</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="boarding.html">Cat Boarding</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Meet our dogs!</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Volunteering</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact-us.html">Contact us</a>
+              </li>
+          </ul>
+        </div>
+      </nav>  
+    <div class="container">
+        <p>Welcome to our website!<br><br>
+        MuttsnMittens is a boarding facility for both dogs and cats. Established in 2003, we provide both short-term and long-term boarding.
+        We were originally located at Pasir Ris farmway, where our compound was able to hold both our dogs and cats. Since the relocation of shelters, our
+        animals have been shifted to 2 locations - our dogs at Sungei Tengah and our cats at Guillemard.
+        We also provide volunteering opportunities for individuals and corporate groups. <br><br>
+        A corporate partnership has allowed for us to build a new compound - MuttsnMittens Active! <br>
+        This state-of-the-art facility features both boarding rooms for canines as well as a swimming pool where they can splash away! Stay tuned for the 
+        official opening of this facility! We are sure that your pooches will have a splashing great time here. 
+        <br><br> With over 100 dogs and 70 cats in our care, we also provide adoption services to suitable households. Take a look at the animals we have 
+        under our care and perhaps you'll be able to find your soulmate! If you are not able to adopt, fret not, there are also fostering and sponsorship opportunities.
+        Whether you are here for adoption or boarding, we ensure that we will do our best to cater to your needs. 
+        </p>
+    </div>
+    <div class="push"></div>
+</div>
+
+    <div>
+        <footer class="d-none d-lg-block">
+            Social media links: 
+            <a href="https://www.facebook.com/muttsnmittens/" target="_blank"> Facebook </a>
+            <a href="https://www.instagram.com/muttsnmittens/?hl=en" target="_blank"> Instagram </a>
+            <a href="https://www.instagram.com/volliesmuttsnmittens/?hl=en" target="_blank">Volunteers' Instagram</a>
+        </footer>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+ </body>
+</html>
