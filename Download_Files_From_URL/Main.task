@@ -1,0 +1,41 @@
+Dim localVariables = {}
+
+localVariables["ContextTarget"]={"Type": "System.String", "Value": ""}
+localVariables["ContextTarget"]["Value"] = WebBrowser.Create("chrome",'''https://www.markmorrisinstitute.org/sacn5_download.html''',30000,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
+
+title_array = []
+missed_array = []
+
+For i = 1 To 72 step 1
+    Try
+        title_array = push(title_array,Replace(Trim(UiElement.GetAttribute({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"A","href":"https://s3.amazonaws.com/mmi_sacn5/2019/SACN5_" + i + ".pdf"}]},"aaname",{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200}), ""), ": ", " - "))
+    Catch Ex
+        Log.Info Ex
+        Log.Info i
+        missed_array = push(missed_array, i)
+    End Try
+Next
+App.Kill("chrome.exe")
+
+For Each value In title_array
+    localVariables["ContextTarget"]={"Type": "System.String", "Value": ""}
+    localVariables["ContextTarget"]["Value"] = WebBrowser.Create("chrome",'''https://s3.amazonaws.com/mmi_sacn5/2019/SACN5_''' + Trim(Regex.FindStr(value,"(?<=chapter\\s)(\\d+)(?=\\s*-)",0), "") +'''.pdf''',30000,{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
+    Delay(1000*7)
+    Keyboard.Press("S", "press", ["Ctrl"],{"iDelayAfter": 300, "iDelayBefore": 200, "sSimulate": "simulate"})
+    Delay(1000*2)
+    Keyboard.Input("D:\\Online Courses\\Small Animal Clinical Nutrition\\" + value + '''.pdf''',{"iDelayAfter": 300, "iDelayBefore": 200, "sSimulate": "message"})
+    Keyboard.Press("Enter", "press", [],{"iDelayAfter": 300, "iDelayBefore": 200, "sSimulate": "simulate"})
+    Delay(1000*2)
+    If UiElement.Exists({"wnd":[{"cls":"#32770","title":"Confirm Save As","app":"chrome"}]},{"bContinueOnError":false,"iDelayAfter":300,"iDelayBefore":200})
+        Mouse.Action({"wnd":[{"cls":"#32770","title":"Confirm Save As","app":"chrome"},{"cls":"DirectUIHWND","aaname":"Confirm Save As"},{"cls":"CtrlNotifySink","idx":6},{"cls":"Button","title":"&Yes","aaname":"Yes"}]},"left","click",10000,{"bContinueOnError": false, "iDelayAfter": 300, "iDelayBefore": 200, "bSetForeground": true, "sCursorPosition": "Center", "iCursorOffsetX": 0, "iCursorOffsetY": 0, "sKeyModifiers": [],"sSimulate": "simulate", "bMoveSmoothly": false})
+    End If
+    Delay(1000*5)
+    App.Kill("chrome.exe")
+    If File.FileExists("D:\\Online Courses\\Small Animal Clinical Nutrition\\" + value + '''.pdf''')
+        Log.Info(value + '''.pdf has been downloaded successfully''')
+    Else 
+        Log.Error("Failed to download " + value + '''.pdf''')
+    End If 
+Next
+
+Log.Info("Unable to find links for: " + Join(missed_array,","))

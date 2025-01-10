@@ -1,0 +1,227 @@
+{
+    "id": "662d5540-ceee-11ef-a4e6-29c8c348b786",
+    "name": "Download_Files_From_URL",
+    "type": "flow",
+    "build": "",
+    "version": "6.1.0.230926",
+    "flow": [
+        {
+            "id": "start",
+            "rect": {
+                "x": 800,
+                "y": 150,
+                "width": 140,
+                "height": 50
+            },
+            "type": "begin",
+            "next": {
+                "refId": "662d7c50-ceee-11ef-a4e6-29c8c348b786",
+                "vertices": []
+            },
+            "caption": "Start"
+        },
+        {
+            "type": "task",
+            "id": "662d7c50-ceee-11ef-a4e6-29c8c348b786",
+            "rect": {
+                "x": 772,
+                "y": 300,
+                "width": 196,
+                "height": 64
+            },
+            "next": {
+                "refId": "",
+                "vertices": []
+            },
+            "exception": {
+                "refId": "",
+                "vertices": []
+            },
+            "file": "Main.task",
+            "caption": "Main",
+            "editorMode": "sourceCode",
+            "breakpoints": {}
+        }
+    ],
+    "variables": [
+        {
+            "type": "none",
+            "name": "g_temp",
+            "value": "null"
+        }
+    ],
+    "layout": {
+        "config": {
+            "global": {
+                "splitterSize": 1,
+                "splitterExtra": 8,
+                "enableEdgeDock": false,
+                "rootOrientationVertical": true,
+                "tabEnableClose": false,
+                "tabEnableRename": false,
+                "tabSetEnableDrag": false,
+                "tabSetEnableMaximize": false,
+                "tabSetMinWidth": 280,
+                "tabSetMinHeight": 200,
+                "borderBarSize": 24,
+                "borderAutoSelectTabWhenClosed": true,
+                "borderEnableAutoHide": true
+            },
+            "borders": [
+                {
+                    "type": "border",
+                    "selected": 1,
+                    "size": 250,
+                    "minSize": 250,
+                    "enableAutoHide": true,
+                    "location": "left",
+                    "children": [
+                        {
+                            "type": "tab",
+                            "id": "flow",
+                            "name": "Process",
+                            "component": "flowPanel",
+                            "config": {
+                                "i18nKey": "flow"
+                            },
+                            "className": ""
+                        },
+                        {
+                            "type": "tab",
+                            "id": "command",
+                            "name": "Command",
+                            "component": "commandPanel",
+                            "config": {
+                                "i18nKey": "command"
+                            },
+                            "className": ""
+                        },
+                        {
+                            "type": "tab",
+                            "id": "timeline",
+                            "name": "Timeline",
+                            "component": "timeLinePanel",
+                            "config": {
+                                "i18nKey": "timeline"
+                            },
+                            "className": ""
+                        },
+                        {
+                            "type": "tab",
+                            "id": "search",
+                            "name": "Search",
+                            "component": "searchPanel",
+                            "config": {
+                                "i18nKey": "search"
+                            },
+                            "className": ""
+                        }
+                    ]
+                },
+                {
+                    "type": "border",
+                    "selected": 0,
+                    "size": 280,
+                    "minSize": 280,
+                    "location": "right",
+                    "children": [
+                        {
+                            "type": "tab",
+                            "id": "commandProperty",
+                            "name": "Property",
+                            "component": "commandPropertyPanel",
+                            "config": {
+                                "i18nKey": "property"
+                            },
+                            "className": ""
+                        },
+                        {
+                            "type": "tab",
+                            "id": "commandVariable",
+                            "name": "Variable",
+                            "component": "commandVariablePanel",
+                            "config": {
+                                "i18nKey": "variable"
+                            },
+                            "className": ""
+                        }
+                    ]
+                }
+            ],
+            "layout": {
+                "type": "row",
+                "id": "body",
+                "children": [
+                    {
+                        "type": "tabset",
+                        "id": "#39b65d52-2f4e-4977-8fc1-a64d5ecb8514",
+                        "selected": 1,
+                        "children": [
+                            {
+                                "type": "tab",
+                                "id": "662d5540-ceee-11ef-a4e6-29c8c348b786",
+                                "name": "Download_Files_From_URL",
+                                "helpText": "C:\\Users\\USER\\Documents\\Laiye Automation\\creator\\Projects\\Download_Files_From_URL\\main.prj",
+                                "component": "flowEditor",
+                                "config": {
+                                    "type": "project",
+                                    "id": "662d5540-ceee-11ef-a4e6-29c8c348b786"
+                                },
+                                "enableClose": false,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-flow.png"
+                            },
+                            {
+                                "type": "tab",
+                                "id": "662d7c50-ceee-11ef-a4e6-29c8c348b786",
+                                "name": "Main",
+                                "helpText": "C:\\Users\\USER\\Documents\\Laiye Automation\\creator\\Projects\\Download_Files_From_URL\\Main.task",
+                                "component": "taskNodeEditor",
+                                "config": {
+                                    "selfControl": true,
+                                    "id": "662d7c50-ceee-11ef-a4e6-29c8c348b786",
+                                    "type": "task",
+                                    "selector": [
+                                        "662d7c50-ceee-11ef-a4e6-29c8c348b786"
+                                    ]
+                                },
+                                "enableClose": true,
+                                "className": "",
+                                "icon": "../../../assets/_/pages-next/home/childrens/main/assets/tab-task.png"
+                            }
+                        ],
+                        "active": true
+                    },
+                    {
+                        "type": "tabset",
+                        "id": "buttom",
+                        "height": 32,
+                        "selected": -1,
+                        "enableDrop": false,
+                        "enableDrag": false,
+                        "enableDivide": false,
+                        "enableClose": false,
+                        "minHeight": 32,
+                        "headerHeight": 32,
+                        "children": [
+                            {
+                                "type": "tab",
+                                "id": "output",
+                                "name": "Output",
+                                "component": "outputPanel",
+                                "config": {
+                                    "i18nKey": "output"
+                                },
+                                "enableDrag": false,
+                                "className": "",
+                                "enableRenderOnDemand": false
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "type": "flow",
+        "version": "1.0.21"
+    }
+}
